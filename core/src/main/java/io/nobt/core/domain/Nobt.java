@@ -3,7 +3,7 @@ package io.nobt.core.domain;
 import io.nobt.core.domain.debt.Debt;
 import io.nobt.core.optimizer.Optimizer;
 
-import java.time.ZonedDateTime;
+import java.time.Instant;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -19,10 +19,10 @@ public class Nobt {
     private final Set<Person> explicitParticipants;
     private final Set<Expense> expenses;
     private final Set<Payment> payments;
-    private final ZonedDateTime createdOn;
+    private final Instant createdOn;
     private final Optimizer optimizer;
 
-    public Nobt(NobtId id, CurrencyKey currencyKey, String name, Set<Person> explicitParticipants, Set<Expense> expenses, Set<Payment> payments, ZonedDateTime createdOn, Optimizer optimizer) {
+    public Nobt(NobtId id, CurrencyKey currencyKey, String name, Set<Person> explicitParticipants, Set<Expense> expenses, Set<Payment> payments, Instant createdOn, Optimizer optimizer) {
         this.id = id;
         this.currencyKey = currencyKey;
         this.name = name;
@@ -82,7 +82,7 @@ public class Nobt {
         return optimizer.apply(getAllDebts());
     }
 
-    public ZonedDateTime getCreatedOn() {
+    public Instant getCreatedOn() {
         return createdOn;
     }
 

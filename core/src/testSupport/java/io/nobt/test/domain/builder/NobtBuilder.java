@@ -3,7 +3,7 @@ package io.nobt.test.domain.builder;
 import io.nobt.core.domain.*;
 import io.nobt.core.optimizer.Optimizer;
 
-import java.time.ZonedDateTime;
+import java.time.Instant;
 import java.util.Arrays;
 import java.util.Set;
 
@@ -14,7 +14,7 @@ public class NobtBuilder {
     private Set<Expense> expenses;
     private Set<Person> participants;
     private Set<Payment> payments;
-    private ZonedDateTime dateTime;
+    private Instant dateTime;
     private CurrencyKey currencyKey;
     private String name;
     private Optimizer optimizer;
@@ -55,7 +55,7 @@ public class NobtBuilder {
         return this;
     }
 
-    public NobtBuilder onDate(ZonedDateTime dateTime) {
+    public NobtBuilder onDate(Instant dateTime) {
         this.dateTime = dateTime;
         return this;
     }
